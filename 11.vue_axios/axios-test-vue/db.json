@@ -1,0 +1,40 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "todo": "vue 3 공부하기",
+      "desc": "router, axios 집중 공부",
+      "done": false
+    },
+
+    {
+      "id": "2",
+      "todo": "운동 하기",
+      "desc": "헬스장 가서 1시간 운동",
+      "done": false
+    },
+
+    {
+      "id": "3",
+      "todo": "피크닉 가기",
+      "desc": "주말에 한강으로 피크닉 가기",
+      "done": false
+    },
+    {
+      "id": "4",
+      "todo": "바다 보러 가기",
+      "desc": "여름에 바다로 놀러 가기",
+      "done": false
+    }
+  ],
+  "users": [
+    {
+      "id": "12",
+      "password": "12"
+    },
+    {
+      "id": "db1648",
+      "password": "9p43"
+    }
+  ]
+}
