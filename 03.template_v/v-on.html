@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3.4.29/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <img :src="puppyImg" alt="puppy" />
+      <button v-on:click="changeImg">변환</button>
+    </div>
+  </body>
+</html>
+<script>
+  const app = Vue.createApp({
+    name: 'app',
+    data() {
+      return {
+        puppyImg:
+          'https://cdn.imweb.me/upload/S201807025b39d1981b0b0/5cac274d00b12.jpg',
+        catImg:
+          'https://lh5.googleusercontent.com/proxy/L-7hpYqmY-2V_IKWV89REZtjUlfVJU6plm3iyjqd9a7Dwo-Act81XCKZraUa1fv2HLCJfUk5MwY21z1MN6GUoBYmEhEMwqE0nwI2d37SVM3H',
+        ispuppy: true,
+      };
+    },
+    methods: {
+      changeImg() {
+        this.puppyImg = this.ispuppy
+          ? this.catImg
+          : 'https://cdn.imweb.me/upload/S201807025b39d1981b0b0/5cac274d00b12.jpg';
+        this.ispuppy = !this.ispuppy;
+      },
+    },
+  }).mount('#app');
+</script>
