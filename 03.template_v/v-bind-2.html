@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3.4.29/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input :type="firstInputType" />
+      <input :type="secondInputType" />
+      <button @click="changeType">타입 변경 버튼</button>
+    </div>
+  </body>
+</html>
+<script>
+  const app = Vue.createApp({
+    name: 'app',
+    data() {
+      return {
+        firstInputType: 'checkbox',
+        secondInputType: 'radio',
+        istype: true,
+      };
+    },
+    methods: {
+      changeType() {
+        this.firstInputType = this.istype ? 'radio' : 'checkbox';
+        this.secondInputType = this.istype ? 'text' : 'radio';
+        this.istype = !this.istype;
+      },
+    },
+  }).mount('#app');
+</script>
