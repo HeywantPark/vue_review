@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{showMessage}}</h1>
+      입금액 :
+      <input type="text" v-model.number="inputNum" @input="updateMessage" />
+      <button @click="completeText">입력</button>
+    </div>
+    <script src="http://unpkg.com/vue"></script>
+    <script>
+      const app = Vue.createApp({
+        name: 'app',
+        data() {
+          return {
+            inputNum: 0,
+            showMessage: '1000원 이상부터 입금이 가능합니다.',
+          };
+        },
+        methods: {
+          updateMessage() {
+            this.showMessage =
+              this.inputNum >= 1000
+                ? '입금이 가능합니다.'
+                : '1000원부터 입금이 가능합니다.';
+          },
+          completeText() {
+            this.showMessage = '입금이 완료되었습니다.';
+            this.inputNum = 0;
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
