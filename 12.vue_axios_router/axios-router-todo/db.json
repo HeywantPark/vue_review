@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "todo": "뉴진스 보기",
+      "done": true
+    },
+    {
+      "id": "2",
+      "todo": "페이커 숭배하기",
+      "done": false
+    },
+    {
+      "id": "3",
+      "todo": "Vue 학습",
+      "done": false
+    },
+    {
+      "id": "4",
+      "todo": "코테 정복",
+      "done": false
+    }
+  ]
+}
