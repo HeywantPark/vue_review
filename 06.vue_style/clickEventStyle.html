@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .bgPink {
+      background-color: pink;
+    }
+    .bgGreen {
+      background-color: greenyellow;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <h1 :class="styleObj">배경색</h1>
+      <button @click="toggleStyle">색변경</button>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        name: 'app',
+        data() {
+          return {
+            isPink: false,
+          };
+        },
+        methods: {
+          toggleStyle() {
+            this.isPink = !this.isPink;
+          },
+        },
+        computed: {
+          styleObj() {
+            return this.isPink ? 'bgPink' : 'bgGreen';
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
