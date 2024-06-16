@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1 style="background-color: palegreen">일반 스타일</h1>
+      <h1 :style="{backgroundColor : 'orange'}">vue 스타일</h1>
+      <h1 :style="changeColor">vue 변수 스타일</h1>
+      <h1 :style="{backgroundColor, color}">vue 여러가지 스타일</h1>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      const app = Vue.createApp({
+        name: 'app',
+        data() {
+          return {
+            changeColor: { backgroundColor: 'pink' },
+            backgroundColor: 'purple',
+            color: 'white',
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
